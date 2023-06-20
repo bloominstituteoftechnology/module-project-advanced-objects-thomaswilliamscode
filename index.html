@@ -96,8 +96,10 @@
       toggle () {
         if ( this.isOn === false) {
           this.isOn = true;
+          return 'You turned the bulb ON'
         } else {
           this.isOn = false;
+          return 'You turned the bulb OFF'
         }
       }
     }
@@ -117,8 +119,30 @@
     //   minusThree.count() // returns null
     //   minusThree.count() // returns null
     class CountDown {
+      constructor ( num ) {
+        this.num = num;
+      }
 
+      count () {
+
+        if ( this.num > 0 ) {
+        if ( this.num > 0 ) {
+            let string = this.num.toString();
+            this.num --;
+            string += '!'
+            return string;
+        }
+      } else if ( this.num  === 0) {
+          this.num  = 'Liftoff'
+          return `${this.num }!`
+        } else if ( this.num  === 'Liftoff' ) {
+          return null;
+        } else {
+          return this.num 
+        }
+      
     }
+  }
 
     // 🧪 TESTS, do not work below this line
     // 🧪 TESTS, do not work below this line
